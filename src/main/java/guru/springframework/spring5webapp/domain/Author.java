@@ -1,6 +1,7 @@
 package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -20,7 +21,9 @@ public class Author {
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    // private Set<Book> books;
+    // Need to set to 'new HashSet<>()' because we took 'book' out of the constructor.
+    private Set<Book> books = new HashSet<>();
 
     // ***  Add constructors  ***
 
@@ -28,10 +31,15 @@ public class Author {
     public Author() {
     }
 
-    public Author(String firstName, String lastName, Set<Book> books) {
+    // public Author(String firstName, String lastName, Set<Book> books) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //     this.books = books;
+    // }
+    // Get rid of the 'books' for now ... .
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.books = books;
     }
 
     // ***  Add Getters and Setters
