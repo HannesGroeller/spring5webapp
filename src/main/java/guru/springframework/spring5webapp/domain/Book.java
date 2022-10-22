@@ -20,6 +20,9 @@ public class Book {
     private String title;
     private String isbn;
 
+    @ManyToOne
+    private Publisher publisher;
+
     @ManyToMany
     // Adding @JoinTable in the Book class, makes Book the owner of the many-to-many
     // relationship and Author is the being owned entity.
@@ -55,6 +58,14 @@ public class Book {
     }
 
     // ***  Add Getters and Setters  ***
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 
     public Long getId() {
         return id;
