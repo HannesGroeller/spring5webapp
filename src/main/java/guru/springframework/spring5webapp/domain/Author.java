@@ -42,7 +42,7 @@ public class Author {
         this.lastName = lastName;
     }
 
-    // ***  Add Getters and Setters
+    // ***  Add Getters and Setters  ***
 
     public Long getId() {
         return id;
