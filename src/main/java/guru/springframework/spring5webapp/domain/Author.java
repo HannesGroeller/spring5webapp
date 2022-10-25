@@ -82,7 +82,9 @@ public class Author {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", books=" + books +
+                // Delete the line, to avoid an infinite loop (circular reference),
+                // after we added a Thymeleaf template.
+                // ", books=" + books +
                 '}';
     }
 

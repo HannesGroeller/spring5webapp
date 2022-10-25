@@ -25,10 +25,10 @@ public class BookController {
     // a model object, and our code is saying for that model we are going to add
     // the attribute called books, and we're going to get execute book repository
     // which is going to give us a list of books.
-    // Now this model is going to get returned back to our view layer, and it's
+    // Now, this model is going to get returned to our view layer, and it's
     // going to have an attribute books and a list of books on that, and then
     // we'll be able to utilize that value inside our view layer to apply the
-    // necessary view that we're going to be returning back to the client.
+    // necessary view that we're going to be returning to the client.
     @RequestMapping("/books")
     public String getBooks(Model model){
 
@@ -36,6 +36,9 @@ public class BookController {
 
         // Define the view name.  We will configure it in class #22
         // (Thymeleaf Templates).
-        return "books";
+        // return "books";
+        // In class #22, we need to add '.list' to books.  This tells to look for
+        // the list template inside the directory books.
+        return "books/list";
     }
 }

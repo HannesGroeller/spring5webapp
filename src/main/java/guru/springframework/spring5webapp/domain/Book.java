@@ -105,7 +105,9 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", authors=" + authors +
+                // Delete the line, to avoid an infinite loop (circular reference),
+                // after we added a Thymeleaf template.
+                // ", authors=" + authors +
                 '}';
     }
 
